@@ -12,6 +12,7 @@ In this example, you will learn the insights on what changes are required to con
 To install Konveyor operator in your minikube cluster, follow along these set of [instructions](https://github.com/konveyor/tackle2-operator#tackle-operator-installation-on-k8s)
 
 _NOTE If you are using macOS, please follow along [this guide](https://github.com/konveyor/tackle2-operator/blob/main/docs/installation-macos.md) for Konveyor operator installation._
+_To install `Konveyor` latest, please use the manifest from `https://raw.githubusercontent.com/konveyor/tackle2-operator/main/tackle-k8s.yaml`._
 
 ## Get started with Analysis
 
