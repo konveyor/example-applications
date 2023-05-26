@@ -19,7 +19,7 @@ _NOTE If you are using macOS, please follow along [this guide](https://github.co
     * Fill in the name of the application
     * Expand source code and enter the following
         * Repository Type: Git
-        * Source Repository: https://github.com/konveyor/example-applications
+        * Source Repository: https://github.com/konveyor/example-applications.git
         * Branch: main
         * Root path: /customers-tomcat-legacy/
         ![](img/step1.png)
