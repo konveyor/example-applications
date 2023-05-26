@@ -9,7 +9,7 @@ In this example, you will learn the insights on what changes are required to con
 * Konveyor Operator
 
 ## Konveyor Operator Installation 
-To install Konveyor operator in your minikube cluster, follow along these set of [instructions](https://github.com/konveyor/tackle2-operator#tackle-operator-installation-on-k8s)
+To install Konveyor operator in your minikube cluster, follow along these set of [instructions](https://konveyor.github.io/konveyor/installation/)
 
 _NOTE If you are using macOS, please follow along [this guide](https://github.com/konveyor/tackle2-operator/blob/main/docs/installation-macos.md) for Konveyor operator installation._
 _To install `Konveyor` latest, please use the manifest from `https://raw.githubusercontent.com/konveyor/tackle2-operator/main/tackle-k8s.yaml`._
@@ -20,10 +20,10 @@ _To install `Konveyor` latest, please use the manifest from `https://raw.githubu
     * Fill in the name of the application
     * Expand source code and enter the following
         * Repository Type: Git
-        * Source Repository: https://github.com/konveyor/example-applications
+        * Source Repository: https://github.com/konveyor/example-applications.git
         * Branch: main
         * Root path: /example-1/
-        ![](img/step1.png)
+        ![](img/step1a.png)
 
     * Click on the `Create`  button.
 
