@@ -22,7 +22,7 @@ _NOTE If you are using macOS, please follow along [this guide](https://github.co
         * Source Repository: https://github.com/konveyor/example-applications.git
         * Branch: main
         * Root path: /customers-tomcat-legacy/
-        ![](img/step1.png)
+        ![](img/step1a.png)
 
     * Click on the `Create`  button.
 
