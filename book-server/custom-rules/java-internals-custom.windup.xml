@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="java-internals-custom"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <description>
+            Custom rule to investigate some issues pertaining to the migraton path OpenJDK 8 and 11.
+        </description>
+        <dependencies>
+            <addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final" />
+        </dependencies>
+    </metadata>
+    <rules>
+        <rule id="java-internals-custom-getFont">
+            <when>
+                <javaclass references="java.awt.Font.getFont({*})"></javaclass>  
+            </when>
+            <perform>
+                <hint title="custom rule identified java.awt.Font.getFont()" effort="3" category-id="mandatory">
+                    <message>
+                        `java.awt.Font.getFont()` referened in this class
+                    </message>
+                </hint>
+            </perform>
+        </rule>
+        <rule id="java-internals-custom-getPeer">
+            <when>
+                <javaclass references="java.awt.Font.getPeer({*})"></javaclass>
+            </when>
+            <perform>
+                <hint title="custom rule identified java.awt.Font.getPeer()" effort="3" category-id="mandatory">
+                    <message>
+                        `java.awt.Font.getPeer()` referenced in this class
+                    </message>
+                </hint>
+            </perform>
+        </rule>
+    </rules>
+</ruleset>

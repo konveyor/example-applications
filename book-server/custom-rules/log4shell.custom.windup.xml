@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ruleset id="log4shell" xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <description>
+            Discover dependencies to log4j versions with security vulnerability CVE-2021-44228
+        </description>
+        <!-- version ranges applied to from and to technologies -->
+        <dependencies>
+            <addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final" />
+            <addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final" />
+            <addon id="org.jboss.windup.rules,windup-rules-xml,3.0.0.Final" />
+        </dependencies>
+    </metadata>
+    <rules>
+        <rule id="log4shell-identifier-00001">
+            <!-- rule condition, when it could be fired -->
+            <when>
+                <project>
+                    <artifact groupId="org.apache.logging.log4j" artifactId="log4j-core" fromVersion="2.0-beta9" toVersion="2.14.1" />
+                </project>
+            </when>
+            <!-- rule operation, what to do if it is fired -->
+            <perform>
+                <hint title="Log4j import with log4shell vulnerability identified" effort="1" category-id="mandatory">
+                <message>You must upgrade to Log4j 2.15.0 to remove the log4shell vulnerability identified in CVE-2021-44228.</message>
+                <link href="https://logging.apache.org/log4j/2.x/security.html" title="Apache Log4J Security Vulnerabilities" />
+                <link href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228" title="CVE-2021-44228" />
+                </hint>
+            </perform>
+        </rule>
+        <rule id="log4shell-identifier-00002">
+            <!-- rule condition, when it could be fired -->
+            <when>
+                <dependency groupId="org.apache.logging.log4j" artifactId="log4j-core" fromVersion="2.0-beta9" toVersion="2.14.1" />
+            </when>
+            <!-- rule operation, what to do if it is fired -->
+            <perform>
+                <hint title="Log4j binary with log4shell vulnerability identified" effort="5" category-id="mandatory">
+                    <message>You must upgrade to Log4j 2.15.0 to remove the log4shell vulnerability identified in CVE-2021-44228.</message>
+                    <link href="https://logging.apache.org/log4j/2.x/security.html" title="Apache Log4J Security Vulnerabilities" />
+                    <link href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228" title="CVE-2021-44228" />
+                </hint>
+            </perform>
+        </rule>
+    </rules>
+</ruleset>

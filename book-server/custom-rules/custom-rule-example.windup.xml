@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="custom-rule-example"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <description>
+            This is an example custom rule
+        </description>
+        <dependencies>
+            <addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final" />
+            <addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final" />
+            <addon id="org.jboss.windup.rules,windup-rules-xml,3.0.0.Final" />
+        </dependencies>
+    </metadata>
+	<rules>
+	<rule id="Test-002-00001" xmlns="http://windup.jboss.org/schema/jboss-ruleset">
+			<!-- rule condition, when it could be fired -->
+			<when>
+				<project>
+					<artifact groupId="com.fasterxml.jackson.core" artifactId="jackson-databind" />
+				</project>
+
+			</when>
+			<!-- rule operation, what to do if it is fired -->
+			<perform>
+				<hint category-id="potential" effort="0" title="jackson-databind identified in the pom.xml">
+					<message><![CDATA[Test-002 Custom rule]]></message>
+					<tag>tag</tag>
+					<link href="http://nufc.com" title="Test-002 Test link">link</link>
+				</hint>
+
+			</perform>
+		</rule>
+	</rules>
+</ruleset>
