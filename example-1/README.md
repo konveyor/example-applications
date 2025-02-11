@@ -16,7 +16,7 @@ _To install `Konveyor` latest, please use the manifest from `https://raw.githubu
 
 ## Get started with Analysis
 
-1. Create an app entry called `customer-tomcat` in the `Analysis` tab of the tackle ui. 
+1. Create an app entry called `customer-tomcat` in the `Application Inventory` tab of the Konveyor ui. 
     * Fill in the name of the application
     * Expand source code and enter the following
         * Repository Type: Git
@@ -26,6 +26,8 @@ _To install `Konveyor` latest, please use the manifest from `https://raw.githubu
         ![](img/step1a.png)
 
     * Click on the `Create`  button.
+    * Once you create the application, tasks are run to create the tags and 
+    identify the application language type.
 
 2. Select the `customer-tomcat` app and click on the `Analyze` button.
 ![](img/step2a.png)
@@ -50,35 +52,28 @@ _To install `Konveyor` latest, please use the manifest from `https://raw.githubu
     a.![](img/step3a.png)
     b. ![](img/step3b.png)
 
-4. Click on the app, and a pop-up pane will appear on the right side of the window with three tabs.
+4. Click on the app, and a pop-up pane will appear on the right side of the window with four tabs.
 ![](img/step4a.png)
 In the `Tags` tab, you can see the tags organized by categories that are applicable to this application.
 
-Click on the `Reports` tab, and select the `Report` hyperlink.
+Click on the `Issues` view from the side pane. It will open an `All Issues` pane and you can filter it based on the application.
 ![](img/step4b.png)
 
 
-5. Konveyor Analysis dashboard gets opened in a new tab.
-![](img/step5.png)
-Since we selected `Source code + Dependencies` in the Analysis wizard, in addition to the example-1 app report, we also have a report for the dependencies. 
-
-6. Click on the `All Issues` tab in the top navigation bar.
-![](img/step6a.png)
-Here you can see a list of informational issues and a couple of issues in the cloud mandatory column along with story point estimates. 
+5. Click on the `Single Apllication` tab and select the application - `Customer-Tomcat`.
 ![](img/step6b.png)
 Click on the issues to expand them. This view provides detailed information regarding File system - Java IO and Hard-coded IP address respectively.
 ![](img/step6c.png)
 
-7. Let’s look into each of the issues
+6. Let’s look into each of the issues
    * File system - Java IO: This issue flags that the app is reading from a file location.This creates awareness, so that the migrator/architect is aware of data access and its dependencies. Click on the hyperlink highlighted below,
 ![](img/step7a.png)
-It will navigate to a page which provides finer details on the location of the identified issue itself.
+It will open a tab which provides finer details on the location of the identified issue itself.
 ![](img/step7b.png)
    * Hard-coded IP address: To run an app in Kubernetes, it needs to be portable and highly configurable. The application should not have hardcoded values and provide mechanisms to pass the required arguments through a config object or via environmental variables. In this example, we have identified that the app uses a 
 hardcoded IP address and it needs to be changed to make it cloud ready. 
-![](img/step7c.png)
 If you click on the file, it will show you the exact location of the line with the hard coded static IP address.
-![](img/step7d.png)
+![](img/step7c.png)
 Using the above information, the migrator/architect can estimate the amount of effort needed to modernize the application and also have an idea of what changes are needed to be cloud ready. 
 
 We have successfuly ran `Analysis` on the Java legacy application and found issues that need to be fixed to make this app cloud ready.  
